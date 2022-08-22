@@ -1,0 +1,6 @@
+README
+
+1. Make sure codes-folder is empty.
+2. Place CSV-file named objects.csv in parent folder (qr-gen).
+3. Run script (python3 qr_gen)
+4. All your QR-codes are now in the codes-folder.

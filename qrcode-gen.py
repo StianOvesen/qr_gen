@@ -1,7 +1,17 @@
 import csv
-import qrcode
 import qrcode.image.svg
+import os
 
+
+### DELETE PREVIOUS QR-CODES
+dir = ('codes')
+
+for file in os.listdir(dir):
+    os.remove(os.path.join(dir, file))
+
+
+
+### OPEN CSV AND GENERATE QR-CODES.
 factory = qrcode.image.svg.SvgPathImage
 
 with open('objects.csv') as csvFile:
@@ -12,3 +22,4 @@ with open('objects.csv') as csvFile:
         img = qrcode.make(guid, image_factory=factory)
         img.save(f'codes/{filename}.svg')
         print(f'{filename}.svg created with {guid} guid')
+
